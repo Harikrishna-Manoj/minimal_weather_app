@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 import 'package:weather_app/application/animation_bloc/animation_bloc.dart';
 import 'package:weather_app/application/weather_bloc/weather_bloc.dart';
 
-// ignore: must_be_immutable
 class ScreenWeatherDetails extends StatelessWidget {
   const ScreenWeatherDetails({super.key});
   @override

@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           create: (context) => AnimationBloc(),
         )
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: ScreenWeatherDetails(),
       ),
