@@ -13,9 +13,9 @@ class WeatherService {
 
   WeatherService({required this.apikey});
 
-  Future<WeatherModel> getWeatherApp(String city) async {
-    final Response response =
-        await http.get(Uri.parse("$Base_Url?q=$city&appid=$apikey"));
+  Future<WeatherModel> getWeather(String city) async {
+    final Response response = await http
+        .get(Uri.parse("$Base_Url?q=$city&appid=$apikey&units=metric"));
     if (response.statusCode == 200) {
       return WeatherModel.fromJson(jsonDecode(response.body));
     } else {
