@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/application/animation_bloc/animation_bloc.dart';
 import 'package:weather_app/application/weather_bloc/weather_bloc.dart';
 import 'package:weather_app/pages/weather_page.dart';
 
@@ -12,9 +13,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => WeatherBloc(),
-      child: const MaterialApp(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => WeatherBloc(),
+        ),
+        BlocProvider(
+          create: (context) => AnimationBloc(),
+        )
+      ],
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: ScreenWeatherDetails(),
       ),
